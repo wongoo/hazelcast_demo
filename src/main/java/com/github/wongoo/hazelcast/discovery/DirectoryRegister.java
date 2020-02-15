@@ -13,7 +13,7 @@ public class DirectoryRegister {
 
     public static final String DIRECTORY = "/tmp/hazelcast_members";
 
-    public static void Register(String ip, int port) throws Exception {
+    public static void register(String ip, int port) throws Exception {
         System.out.println("register " + ip + ":" + port);
         new File(DIRECTORY).mkdirs();
         File file = new File(DIRECTORY + File.separator + ip + ":" + port);
@@ -21,7 +21,7 @@ public class DirectoryRegister {
         file.deleteOnExit();
     }
 
-    public static void Unregister(String ip, int port) throws Exception {
+    public static void unregister(String ip, int port) throws Exception {
         System.out.println("unregister " + ip + ":" + port);
         new File(DIRECTORY + File.separator + ip + ":" + port).delete();
     }
